@@ -17,6 +17,7 @@ class ProductController extends Controller
             'products' => $products
         ]);
     }
+    //init
     public function show($slug)
     {
         $product = Product::where('slug', $slug)->first();
