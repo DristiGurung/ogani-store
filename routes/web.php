@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Models\Category;
@@ -41,3 +42,5 @@ Route::get('/categories', [CategoryController::class, 'getAction']);
 Route::post('/cart', [CartController::class, 'add']);
 Route::get('/cart', [CartController::class, 'show']);
 Route::delete('/cart/remove', [CartController::class,'delete']);
+
+Route::get('/checkout', [CheckoutController::class,'show']);

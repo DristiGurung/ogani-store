@@ -114,6 +114,7 @@
     </section>
 
 
+@endsection
     @section('scripts')
     <script>
         function deleteCart(hash) {
@@ -125,4 +126,6 @@
         form.submit();
     }
     </script>
-        @endsection
+
+    @endsection
+      
