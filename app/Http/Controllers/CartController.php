@@ -21,7 +21,19 @@ class CartController extends Controller
         return back();
 
     }
-    public function show(){
-        return view('cart');
+    public function show()
+    {
+        $shoppingCart= Cart::name('shopping');
+        $items= $shoppingCart->getItems();
+        $total= $shoppingCart->getTotal();
+        $subtotal= $shoppingCart->getSubTotal();
+        return view('cart',[
+            'items' => $items,
+            'total' => $total,
+           'subtotal' => $subtotal
+        ]);
+    }
+    public function delete(Request $request){
+        dd($request->all());
     }
 }

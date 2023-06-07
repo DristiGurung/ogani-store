@@ -37,5 +37,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/categories', [CategoryController::class, 'getAction']);
+
 Route::post('/cart', [CartController::class, 'add']);
 Route::get('/cart', [CartController::class, 'show']);
+Route::delete('/cart/remove', [CartController::class,'delete']);

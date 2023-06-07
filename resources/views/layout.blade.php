@@ -174,6 +174,7 @@
     <!-- Header Section End -->
 
     @yield('content')
+    
     <!-- Footer Section Begin -->
     <footer class="footer spad">
         <div class="container">
@@ -251,6 +252,10 @@
     <script src="{{ asset ('js/mixitup.min.js') }}"></script>
     <script src="{{ asset ('js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset ('js/main.js') }}"></script>
+
+
+    @yield('scripts')
+    
 </body>
 
 </html>
