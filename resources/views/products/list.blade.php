@@ -81,8 +81,9 @@
                         <div class="sidebar__item">
                             <h4>Categories</h4>
                             <ul>
+                               
                             @foreach($categories as $category) 
-                            <li><a href="#">{{ $category->name}}</a></li>
+                                <li><a class="{{ request()->getQueryString() == 'category='.$category->slug ? 'text-primary' : '' }}" href="/products?category={{$category->slug}}">{{ $category->name}}</a></li>
                             @endforeach
                         
                             </ul>

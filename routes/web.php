@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -19,21 +20,22 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    dd("Welcome");
-    return view('welcome');
+  dd("Welcome");
+  return view('welcome');
 });
 
-Route::get('/login', function(){
+Route::get('/login', function () {
   return view('login');
 });
 
-Route::post('/login', [LoginController::class,'authenticate']);
-Route::get('/home', [HomeController::class,'index']);
-Route::get ('/products',[ProductController::class,'index']);   
-Route::get ('/product/{slug}',[ProductController::class,'show']);   
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/home', [HomeController::class, 'index']);
+Route::get('/products', [ProductController::class, 'index']);
+Route::get('/product/{slug}', [ProductController::class, 'show']);
 Route::get('/about', function () {
-    return view('about');
+  return view('about');
 });
 
-Route::get('/categories', [CategoryController::class,'getAction']);
-
+Route::get('/categories', [CategoryController::class, 'getAction']);
+Route::post('/cart', [CartController::class, 'add']);
+Route::get('/cart', [CartController::class, 'show']);
