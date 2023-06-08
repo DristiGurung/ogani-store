@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('full_name');
             $table->string('email');
             $table->string('phone');
+            $table->string('status')->default('pending');
             $table->foreignId('billing_id')->constrained('addresses','id');
             $table->foreignId('shipping_id')->constrained('addresses','id');
             $table->foreignId('payment_id')->constrained('payments','id');

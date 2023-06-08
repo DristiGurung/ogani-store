@@ -2114,6 +2114,14 @@ ol {
 	margin-bottom: 20px;
 }
 
+.checkout__input.invalid input {
+	border: 1px solid red !important;
+}
+
+.checkout__input.invalid small {
+	color:  red;
+}
+
 .checkout__input p span {
 	color: #dd2222;
 }
