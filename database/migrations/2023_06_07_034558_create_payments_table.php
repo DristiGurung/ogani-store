@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('payment_gateway_id')->constrained('payment_gateways','id');
             $table->string('payment_status');
             $table->integer('price_paid');
+            $table->string('transaction_id')->nullable();
             $table->timestamps();
         });
     }

@@ -31,7 +31,7 @@ Route::get('/login', function () {
 });
 
 Route::post('/login', [LoginController::class, 'authenticate']);
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/products', [ProductController::class, 'index']);
 Route::get('/product/{slug}', [ProductController::class, 'show']);
 Route::get('/about', function () {
@@ -47,3 +47,4 @@ Route::delete('/cart/remove', [CartController::class,'delete']);
 Route::get('/checkout', [CheckoutController::class,'show']);
 Route::post('/checkout', [CheckoutController::class,'store'])->name('checkout.store');
 Route::get('/payment/{paymentGateway}', [PaymentController::class,'show'])->name('payment.show');
+Route::get('/thankyou', [PaymentController::class,'thankyou'])->name('thankyou');

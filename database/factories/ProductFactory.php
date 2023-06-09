@@ -22,7 +22,7 @@ class ProductFactory extends Factory
             'slug' => str()->slug($name),
             'description' => fake()->text(),
             'quantity' => fake()->numberBetween(0, 20),
-            'price' => fake()->numberBetween(10000, 1000000),
+            'price' => fake()->numberBetween(1000, 100000),
         ];
     }
 }
