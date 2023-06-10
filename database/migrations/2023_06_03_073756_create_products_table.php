@@ -18,9 +18,9 @@ return new class extends Migration
             $table->integer('price');
             $table->mediumText('description')->nullable();
             $table->mediumText('information')->nullable();
+            $table->json("images")->nullable();
             $table->integer('quantity');
-            $table->boolean('is_active')-> default(true);
-        
+            $table->boolean('is_active')-> default(true);        
             $table->timestamps();
         });
     }

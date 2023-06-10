@@ -15,9 +15,9 @@ class ProductController extends Controller
         $category = Category::where('slug', $filterCategorySlug)->first();
 
         if ($category) {
-            $products = $category->products()->get();
+            $products = $category->products()->orderBy('created_at','desc')->get();
         } else {
-            $products = Product::all();
+            $products = Product::orderBy('created_at','desc')->get();
         }
 
 
